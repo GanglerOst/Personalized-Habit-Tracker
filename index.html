@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" id="theme-color" content="#f6f7fb">
+  <meta name="description" content="Your personal habit space. Track daily habits, see your progress, and make room for better.">
+  <meta name="referrer" content="no-referrer">
+  <title>Lock In · Your daily habit space</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='20' fill='%236754d9'/%3E%3Cpath d='m17 33 10 10 21-23' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <style>:root{--accent:#6754d9;--bg:#f6f7fb;--surface:#fff;--text:#22253b;--muted:#777b91;--border:#e9eaf2;--soft:#f1effc;--green:#167a57;--danger:#b24b37;--shadow:0 8px 36px #252a4d05;--ring:#e9e6fa;color-scheme:light;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+:root[data-theme=dark]{--bg:#11131d;--surface:#1b1e2d;--text:#f1f1fa;--muted:#a5abc2;--border:#30354a;--soft:#292c43;--green:#81d9ae;--danger:#ffb7a3;--ring:#353951;--shadow:none;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-size:14px;line-height:1.5}button,input,select{font:inherit}button{cursor:pointer}button:disabled{cursor:default;opacity:.35}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:3px}button,a,input{touch-action:manipulation}button{color:inherit}a{color:var(--accent)}h1,h2,h3,p{margin:0}h1{font-size:clamp(25px,2.4vw,34px);letter-spacing:-1px;line-height:1.25}h2{font-size:18px;letter-spacing:-.3px}h3{font-size:15px}svg{display:block}svg text{font-family:inherit}.muted{color:var(--muted)}.small{font-size:12px}.eyebrow{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}.row{display:flex;align-items:center;gap:12px}.between{justify-content:space-between}.stack{display:grid;gap:18px}.card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:24px;box-shadow:var(--shadow)}.btn{border:0;border-radius:11px;background:var(--accent);color:#fff;font-weight:650;padding:11px 17px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .15s,opacity .15s}.btn:hover{opacity:.88;transform:translateY(-1px)}.btn.secondary{background:var(--soft);color:var(--text)}.btn.outline{background:transparent;border:1px solid var(--border);color:var(--muted)}.btn.danger{background:var(--danger);color:var(--surface)}.icon-btn{border:1px solid var(--border);background:var(--surface);border-radius:10px;min-width:36px;min-height:36px;padding:6px;display:inline-grid;place-items:center;color:var(--muted)}.icon-btn:hover{background:var(--soft);color:var(--accent)}.app{max-width:1600px;min-height:100vh;margin:auto;display:grid;grid-template-columns:224px minmax(0,1fr)}.sidebar{background:var(--surface);border-right:1px solid var(--border);padding:34px 22px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}.brand{font-size:23px;font-weight:800;letter-spacing:-.8px;display:flex;align-items:center;gap:10px}.brand-mark{width:36px;height:36px;border-radius:12px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:23px}.brand-sub{padding-left:46px;font-size:11px;color:var(--muted);margin-top:-3px}.nav{display:grid;gap:8px;margin-top:54px}.nav button{background:transparent;border:0;border-radius:12px;padding:14px 15px;display:flex;align-items:center;gap:12px;color:var(--muted);text-align:left;font-weight:600}.nav button.active{color:var(--accent);background:var(--soft)}.nav svg{width:19px;height:19px}.sidebar-note{margin-top:auto;padding:20px 12px 14px;color:var(--muted);font-size:12px}.sidebar-note .plant{font-size:32px;margin-bottom:12px}.sidebar-footer{border-top:1px solid var(--border);padding-top:20px;font-size:11px;color:var(--muted)}.dot{width:6px;height:6px;background:var(--green);display:inline-block;border-radius:50%;margin-right:6px}.main{padding:34px clamp(20px,3.5vw,54px) 42px;min-width:0}.topline{display:flex;align-items:center;justify-content:space-between;margin-bottom:30px}.topline .eyebrow{letter-spacing:1px}.top-actions{display:flex;align-items:center;gap:12px}.date-input{border:1px solid var(--border);border-radius:10px;background:var(--surface);padding:10px 12px;color:var(--text);max-width:165px;min-height:42px}.avatar{height:36px;width:36px;border-radius:50%;display:grid;place-items:center;background:var(--soft);color:var(--accent);font-size:18px}.intro{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:26px}.intro p{margin-top:8px;font-size:14px}.summary-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:16px;margin-bottom:26px}.summary{padding:20px 22px;min-height:122px;display:flex;align-items:center;justify-content:space-between;gap:12px}.metric{font-size:29px;font-weight:750;letter-spacing:-.8px;margin:7px 0 2px;line-height:1.2}.metric span{font-size:14px;font-weight:500;color:var(--muted);letter-spacing:0}.metric-icon{height:42px;width:42px;border-radius:13px;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-size:20px}.ring{width:82px;height:82px;position:relative;flex:none}.ring svg{transform:rotate(-90deg)}.ring strong{position:absolute;inset:0;display:grid;place-items:center;font-size:17px}.ring circle:last-child{transition:stroke-dashoffset .35s ease}.workspace{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(285px,1fr);gap:24px;align-items:start}.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;gap:12px}.weekrail{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;margin-bottom:26px}.day{border:1px solid var(--border);border-radius:13px;min-height:76px;background:var(--surface);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:var(--muted)}.day strong{font-size:18px;color:var(--text);font-weight:650}.day .daydot{height:4px;width:4px;border-radius:50%;background:transparent;margin-top:2px}.day.today .daydot{background:var(--accent)}.day.selected{background:var(--accent);border-color:var(--accent);color:#ffffffbd;box-shadow:0 5px 15px #6754d920}.day.selected strong{color:#fff}.day.selected .daydot{background:white}.day.blank{visibility:hidden}.habit-section{margin-bottom:24px}.group-title{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:750;letter-spacing:1px;margin:0 0 12px;color:var(--muted)}.group-title .pill{font-size:10px;padding:1px 7px;border-radius:6px;background:var(--soft);color:var(--muted)}.habits{display:grid;gap:10px}.habit{background:var(--surface);border:1px solid var(--border);border-radius:15px;display:flex;align-items:center;padding:15px;gap:12px;transition:border .2s,background .2s}.habit.is-success{border-color:color-mix(in srgb,var(--accent) 28%,var(--border))}.habit-emoji{height:43px;width:43px;border-radius:13px;background:var(--bg);display:grid;place-items:center;font-size:23px;flex:none}.habit-main{flex:1;min-width:0}.habit-name{font-size:14px;font-weight:650;overflow-wrap:anywhere}.habit-meta{font-size:11px;color:var(--muted);margin-top:3px;display:flex;gap:8px;flex-wrap:wrap}.habit-meta .success-text{color:var(--green)}.habit-meta .missed-text{color:var(--danger)}.check{width:32px;height:32px;border-radius:10px;border:1.5px solid var(--border);background:var(--surface);display:grid;place-items:center;flex:none;font-size:18px;color:transparent}.check[aria-checked=true]{background:var(--accent);border-color:var(--accent);color:#fff;animation:pop .22s ease}.negative{background:none;border:0;color:var(--muted);font-size:11px;padding:7px 0;text-decoration:underline;text-underline-offset:3px}.negative[aria-pressed=true]{color:var(--danger)}.edit{border:0;background:none;color:var(--muted);font-size:20px;padding:0;width:24px;min-height:36px}.habit-actions{display:flex;align-items:center;gap:10px}.add-dashed{width:100%;min-height:48px;border:1px dashed var(--border);background:transparent;border-radius:13px;color:var(--accent);font-weight:600}.quote-card{background:var(--soft);border:0;padding:25px;position:relative;overflow:hidden}.quote-card .quote-mark{font-family:Georgia,serif;font-size:50px;line-height:.7;color:var(--accent);opacity:.6;margin-bottom:14px}.quote-card blockquote{margin:0;font-size:17px;font-weight:600;line-height:1.6;letter-spacing:-.2px}.quote-card p{margin-top:16px;color:var(--muted);font-size:11px}.mini-legend{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)}.mini-legend i{width:7px;height:7px;background:var(--accent);border-radius:2px}.bar-chart{width:100%;height:auto;overflow:visible;margin:14px 0 4px}.chart-note{font-size:11px;color:var(--muted);margin-top:12px;line-height:1.7}.week-score{font-size:24px;font-weight:750;letter-spacing:-.7px;margin-top:6px}.week-score span{font-size:12px;font-weight:400;color:var(--muted);letter-spacing:0}.guide-step{display:flex;gap:12px;margin:14px 0}.guide-step b{height:23px;width:23px;border-radius:8px;display:grid;place-items:center;background:var(--soft);color:var(--accent);font-size:11px;flex:none}.guide-step p{font-size:12px;color:var(--muted);margin-top:2px}.footer{margin-top:30px;color:var(--muted);font-size:11px;display:flex;justify-content:space-between;gap:14px}.banner{padding:12px 18px;border-radius:12px;background:var(--soft);margin-bottom:18px;font-size:13px;display:flex;align-items:center;justify-content:space-between;gap:12px}.banner.error{border:1px solid var(--danger);color:var(--danger)}.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:var(--text);color:var(--surface);box-shadow:0 12px 45px #0002;border-radius:14px;padding:15px 23px;z-index:20;font-size:14px;max-width:90vw;animation:rise .2s ease}.insights-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.line-chart{min-width:480px;width:100%;height:auto}.chart-scroll{overflow:auto;margin-top:20px}.table-scroll{overflow:auto;margin-top:20px;max-height:500px}.matrix{border-collapse:separate;border-spacing:0;width:100%;font-size:11px;white-space:nowrap}.matrix th,.matrix td{border-bottom:1px solid var(--border);padding:8px;text-align:center;min-width:35px}.matrix th:first-child{position:sticky;left:0;background:var(--surface);z-index:1;text-align:left;min-width:180px}.matrix thead th{position:sticky;top:0;background:var(--surface);z-index:2}.matrix thead th:first-child{z-index:3}.matrix button{background:transparent;border:1px solid var(--border);border-radius:6px;height:26px;width:26px;color:var(--muted)}.matrix button.success{background:var(--accent);color:#fff;border-color:var(--accent)}.matrix button.missed{border-color:var(--danger);color:var(--danger)}.setting-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:24px}.swatches{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}.swatch{width:44px;height:44px;border:3px solid var(--surface);outline:1px solid var(--border);border-radius:50%;color:white;font-size:17px}.swatch[aria-checked=true]{outline:2px solid var(--accent);outline-offset:2px}.switch{width:45px;height:26px;border:0;border-radius:20px;background:var(--border);padding:3px}.switch:after{content:'';display:block;width:20px;height:20px;border-radius:50%;background:white;transition:transform .2s}.switch[aria-checked=true]{background:var(--accent)}.switch[aria-checked=true]:after{transform:translateX(19px)}.setting-line{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:18px 0;border-bottom:1px solid var(--border)}.setting-line:first-of-type{padding-top:8px}.setting-line p{font-size:12px;color:var(--muted);margin-top:4px}.backup-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.empty{text-align:center;padding:36px 20px;color:var(--muted);font-size:13px}.empty .empty-icon{font-size:30px;margin-bottom:10px}.text-list{padding-left:18px;font-size:13px;color:var(--muted);line-height:1.9}dialog{width:min(480px,calc(100vw - 32px));max-height:90vh;overflow:auto;border:1px solid var(--border);border-radius:24px;background:var(--surface);color:var(--text);padding:28px;box-shadow:0 25px 100px #0003}dialog::backdrop{background:#1415256b;backdrop-filter:blur(4px)}.modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}.field{display:grid;gap:8px;margin:18px 0}.field label{font-size:12px;font-weight:650}.field input,.field select{width:100%;border:1px solid var(--border);border-radius:11px;padding:12px 13px;background:var(--bg);color:var(--text);min-height:46px}.emoji-picks{display:flex;gap:7px;flex-wrap:wrap}.emoji-picks button{background:var(--bg);border:1px solid var(--border);border-radius:9px;height:38px;width:38px;font-size:20px}.modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:24px;flex-wrap:wrap}.archive{margin-top:22px;border-top:1px solid var(--border);padding-top:18px}.hidden{display:none!important}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}.blocked{max-width:520px;margin:18vh auto;padding:30px}.mobile-brand{display:none}@keyframes pop{50%{transform:scale(1.12)}}@keyframes rise{from{opacity:0;bottom:18px}to{opacity:1;bottom:28px}}@media(min-width:1600px){.app{border-left:1px solid var(--border);border-right:1px solid var(--border)}}@media(max-width:1100px){.app{grid-template-columns:190px minmax(0,1fr)}.sidebar{padding:28px 16px}.main{padding:28px 24px}.workspace{grid-template-columns:minmax(0,1fr) 280px;gap:18px}.summary-grid{grid-template-columns:1.3fr 1fr 1fr}.summary{padding:18px 16px}.metric-icon{display:none}.ring{height:65px;width:65px}.ring svg{width:65px;height:65px}.ring strong{font-size:14px}.card{padding:20px}.habit{padding:12px;gap:9px}.habit-emoji{height:35px;width:35px;font-size:21px}.habit-actions{gap:6px}}@media(max-width:900px){.app{grid-template-columns:170px minmax(0,1fr)}.workspace{grid-template-columns:1fr}.workspace>aside{display:grid;grid-template-columns:1fr 1fr;align-items:start}.workspace>aside .tips{display:none}.summary-grid{gap:10px}.summary{padding:16px 13px}.summary .ring{display:none}.metric{font-size:26px}.insights-grid,.setting-grid{grid-template-columns:1fr}.sidebar .brand{font-size:21px}.sidebar{padding:28px 12px}}@media(max-width:620px){.app{display:block}.sidebar{height:auto;position:fixed;top:auto;bottom:0;left:0;right:0;padding:7px 12px max(7px,env(safe-area-inset-bottom));z-index:10;border-right:0;border-top:1px solid var(--border)}.sidebar>.brand,.brand-sub,.sidebar-note,.sidebar-footer{display:none}.nav{margin:0;display:flex;justify-content:space-around;gap:5px}.nav button{flex:1;padding:10px;justify-content:center;gap:7px;font-size:12px}.nav svg{width:17px;height:17px}.main{padding:22px 18px 100px}.mobile-brand{display:flex;font-size:17px;gap:7px;font-weight:750}.topline{margin-bottom:24px}.topline>.eyebrow{display:none}.avatar{display:none}.date-input{font-size:12px;max-width:145px;padding:8px;min-height:38px}.intro{align-items:flex-start}.intro .btn{padding:10px 13px;font-size:12px;white-space:nowrap}.intro h1{font-size:26px}.intro p{font-size:12px;max-width:230px}.summary-grid{grid-template-columns:1fr 1fr;margin-bottom:24px}.summary:first-child{grid-column:1/-1;min-height:105px}.summary:first-child .ring{display:block}.summary{min-height:105px;padding:18px}.summary .metric-icon{display:grid}.summary:first-child .metric{font-size:28px}.summary .small{font-size:11px}.weekrail{gap:5px}.day{min-height:65px;border-radius:11px;font-size:10px}.day strong{font-size:16px}.workspace>aside{display:grid;grid-template-columns:1fr}.card{padding:20px}.habit{padding:13px 11px}.habit-name{font-size:13px}.habit-meta{font-size:10px}.negative{font-size:10px}.habit-actions{gap:5px}.check{height:31px;width:31px}.footer{font-size:10px;flex-wrap:wrap}.quote-card blockquote{font-size:16px}.matrix th:first-child{min-width:145px}.section-head h2{font-size:17px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+  <div id="app"></div>
+  <noscript><p style="padding:30px">Enable JavaScript to use your habit tracker. Everything runs locally in your browser.</p></noscript>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  <dialog id="editor" aria-labelledby="editor-title">
+    <div class="modal-head"><h2 id="editor-title">A new little promise</h2><button type="button" class="icon-btn" id="editor-close" aria-label="Close habit editor">×</button></div>
+    <form id="habit-form">
+      <div class="field"><label for="habit-name">Habit name</label><input id="habit-name" placeholder="Read for 20 minutes" maxlength="60" required autocomplete="off"></div>
+      <div class="field"><label for="habit-emoji">Your emoji or icon</label><input id="habit-emoji" maxlength="32" required autocomplete="off"><p class="small muted">Paste an emoji or choose one below. On Mac, press Control + Command + Space for more.</p></div>
+      <div class="emoji-picks" aria-label="Emoji suggestions"><button type="button" data-emoji="⏰">⏰</button><button type="button" data-emoji="💪">💪</button><button type="button" data-emoji="🥕">🥕</button><button type="button" data-emoji="📚">📚</button><button type="button" data-emoji="🧘">🧘</button><button type="button" data-emoji="🛡️">🛡️</button><button type="button" data-emoji="✨">✨</button></div>
+      <div class="field"><label for="habit-category">Habit category</label><select id="habit-category"><option value="good">Good habit · something to do</option><option value="bad">Bad habit · something to avoid</option></select><p class="small muted" id="category-note"></p></div>
+      <div class="modal-actions"><button type="button" class="btn secondary" id="editor-cancel">Cancel</button><button type="submit" class="btn">Save habit</button></div>
+      <div class="archive hidden" id="archive-area"><button type="button" class="negative" id="archive-button">Archive this habit</button><div id="archive-confirm" class="hidden"><p class="small muted">Archive from tomorrow? Your previous check-ins and today’s goal stay intact.</p><button type="button" class="btn secondary" id="confirm-archive" style="margin-top:12px">Yes, archive from tomorrow</button></div></div>
+    </form>
+  </dialog>
+  <input type="file" id="import-file" accept="application/json,.json" class="hidden" aria-label="Choose a habit tracker backup">
+  <dialog id="restore" aria-labelledby="restore-title"><h2 id="restore-title">Restore your progress?</h2><p class="muted" id="import-description" style="margin-top:16px"></p><div class="modal-actions"><button class="btn secondary" id="restore-cancel">Cancel</button><button class="btn" id="restore-confirm">Restore backup</button></div></dialog>
+  <script>const HabitDomain = (() => {
+  const key = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  const parse = s => { const [y,m,d] = s.split('-').map(Number); return new Date(y,m-1,d,12); };
+  const validDate = s => typeof s === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(s) && key(parse(s)) === s;
+  const add = (s,n) => { const d=parse(s); d.setDate(d.getDate()+n); return key(d); };
+  const month = s => { const d=parse(s); return Array.from({length:new Date(d.getFullYear(),d.getMonth()+1,0,12).getDate()},(_,i)=>key(new Date(d.getFullYear(),d.getMonth(),i+1,12))); };
+  const week = s => { const first=Math.floor((parse(s).getDate()-1)/7)*7; return month(s).slice(first,first+7); };
+  const due = (h,d) => d>=h.startDate && (!h.archivedFrom || d<h.archivedFrom);
+  const daily = (habits,logs,d,today) => {
+    const active=d>today?[]:habits.filter(h=>due(h,d));
+    const successes=active.filter(h=>logs[d]?.[h.id]==='success').length;
+    const logged=active.filter(h=>logs[d]?.[h.id]!==undefined).length;
+    return {successes,possible:active.length,logged,percent:active.length?successes/active.length*100:null};
+  };
+  const range = (habits,logs,days,today) => {
+    const stats=days.map(d=>daily(habits,logs,d,today));
+    const successes=stats.reduce((s,d)=>s+d.successes,0),possible=stats.reduce((s,d)=>s+d.possible,0);
+    return {successes,possible,percent:possible?successes/possible*100:null};
+  };
+  const streak = (h,logs,today) => {
+    let d=today,n=0;
+    if ((h.archivedFrom && d>=h.archivedFrom) || logs[d]?.[h.id]==='missed') return 0;
+    if (logs[d]?.[h.id]!=='success') d=add(d,-1);
+    while(due(h,d) && logs[d]?.[h.id]==='success'){ n++;d=add(d,-1); }
+    return n;
+  };
+  const accents=['#6754D9','#007E73','#B34A20','#B53169'];
+  const seed = (today=key()) => ({version:1,habits:[
+    ['wake','Wake up at 9AM','⏰','good'],['gym','Gym','💪','good'],['protein','Protein shake','🥕','good'],
+    ['porn','Porn','🛡️','bad'],['games','Games','🎮','bad'],['smoking','Smoking','🚭','bad'],['gambling','Gambling','🎲','bad'],
+  ].map(([id,name,emoji,category])=>({id,name,emoji,category,startDate:today})),checkIns:{},preferences:{mode:'light',accent:accents[0]}});
+  const record = x => x!==null && typeof x==='object' && !Array.isArray(x);
+  function validate(data){
+    if(!record(data)||data.version!==1||!Array.isArray(data.habits)||data.habits.length>500||!record(data.checkIns)||!record(data.preferences))throw Error('This is not a supported Lock In backup.');
+    const p=data.preferences;
+    if(!['light','dark'].includes(p.mode)||!accents.includes(p.accent))throw Error('Invalid theme settings.');
+    const ids=new Set();
+    for(const h of data.habits){
+      if(!record(h)||typeof h.id!=='string'||!/^[\w-]{1,100}$/.test(h.id)||['__proto__','constructor','prototype'].includes(h.id)||ids.has(h.id)||
+        typeof h.name!=='string'||!h.name.trim()||h.name.length>60||typeof h.emoji!=='string'||!h.emoji.trim()||h.emoji.length>32||
+        !['good','bad'].includes(h.category)||!validDate(h.startDate)||
+        (h.archivedFrom!==undefined&&(!validDate(h.archivedFrom)||h.archivedFrom<=h.startDate)))throw Error('Invalid habit data.');
+      ids.add(h.id);
+    }
+    for(const [date,entries] of Object.entries(data.checkIns)){
+      if(!validDate(date)||!record(entries))throw Error('Invalid date in check-in history.');
+      for(const [id,outcome] of Object.entries(entries)){
+        const h=data.habits.find(h=>h.id===id);
+        if(!ids.has(id)||!h||!due(h,date)||!['success','missed'].includes(outcome))throw Error('Invalid check-in history.');
+      }
+    }
+    // Copy only supported fields and discard unknown keys in imported files.
+    return {version:1,habits:data.habits.map(({id,name,emoji,category,startDate,archivedFrom})=>({id,name,emoji,category,startDate,...(archivedFrom?{archivedFrom}:{})})),
+      checkIns:JSON.parse(JSON.stringify(data.checkIns)),preferences:{mode:p.mode,accent:p.accent}};
+  }
+  return {key,parse,validDate,add,month,week,due,daily,range,streak,accents,seed,validate};
+})();
+</script>
+  <script>(() => {
+  'use strict';
+  const D=HabitDomain, STORAGE='lockin-browser-v1';
+  const el=id=>document.getElementById(id);
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const fmt=(d,opts)=>D.parse(d).toLocaleDateString(undefined,opts);
+  const pct=n=>n===null?'—':`${Math.round(n)}%`;
+  const icons={today:'<rect x="3" y="3" width="18" height="18" rx="5"/><path d="m7 12 3 3 7-7"/>',insights:'<path d="M4 20V10m8 10V4m8 16v-7"/>',settings:'<path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3"/><circle cx="15" cy="17" r="3"/>'};
+  const icon=n=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">${icons[n]}</svg>`;
+  let today=D.key(),selected=today,tab='today',state,readError='',saveError='',editing=null,importCandidate=null,toastTimer;
+  let persisted=Boolean(false);
+  try { const raw=localStorage.getItem(STORAGE); state=raw?D.validate(JSON.parse(raw)):D.seed(today); persisted=Boolean(raw); }
+  catch(error){ readError='Saved data could not be opened. Your saved copy has been kept. You can retry or restore a valid backup.'; }
+
+  function save(){
+    try{localStorage.setItem(STORAGE,JSON.stringify(state));saveError='';persisted=true;}
+    catch(error){saveError='Saving is unavailable. Your changes are in memory—export a backup before closing this tab.';}
+  }
+  function applyTheme(){
+    document.documentElement.dataset.theme=state.preferences.mode;
+    document.documentElement.style.setProperty('--accent',state.preferences.accent);
+    el('theme-color').content=state.preferences.mode==='dark'?'#11131d':'#f6f7fb';
+  }
+  function toast(message){
+    clearTimeout(toastTimer);el('toast').textContent=message;el('toast').classList.remove('hidden');
+    toastTimer=setTimeout(()=>el('toast').classList.add('hidden'),3500);
+  }
+  const quotes=['Great job staying consistent!','One small choice, real progress.','Keep the streak alive!','You showed up for yourself today.'];
+  function outcome(id,date,value){
+    const habit=state.habits.find(h=>h.id===id);
+    if(!habit||!D.validDate(date)||date>today||!D.due(habit,date))return;
+    const entries=state.checkIns[date]??{};
+    const previous=entries[id];
+    if(value===undefined)delete entries[id];else entries[id]=value;
+    state.checkIns[date]=entries;save();render();
+    if(value==='success'&&previous!=='success')toast(`✨ ${quotes[Math.floor(Math.random()*quotes.length)]}`);
+  }
+  function ring(progress){
+    const value=progress.percent??0;
+    return `<div class="ring" role="img" aria-label="${esc(pct(progress.percent))} complete"><svg width="82" height="82" viewBox="0 0 82 82" aria-hidden="true"><circle cx="41" cy="41" r="34" fill="none" stroke="var(--ring)" stroke-width="7"/><circle cx="41" cy="41" r="34" fill="none" stroke="var(--accent)" stroke-width="7" stroke-linecap="round" stroke-dasharray="213.63" stroke-dashoffset="${213.63*(1-value/100)}"/></svg><strong>${pct(progress.percent)}</strong></div>`;
+  }
+  function summary(){
+    const daily=D.daily(state.habits,state.checkIns,selected,today);
+    const week=D.range(state.habits,state.checkIns,D.week(selected),today);
+    const active=state.habits.filter(h=>D.due(h,today));
+    const best=Math.max(0,...active.map(h=>D.streak(h,state.checkIns,today)));
+    return `<div class="summary-grid"><section class="card summary"><div><div class="eyebrow">${selected===today?'Today’s':'Selected day’s'} progress</div><div class="metric">${daily.successes} <span>/ ${daily.possible} habits</span></div><div class="small muted">${daily.possible?`${daily.possible-daily.logged} still to check in`:'No habits active on this date'}</div></div>${ring(daily)}</section>
+    <section class="card summary"><div><div class="eyebrow">This week</div><div class="metric">${pct(week.percent)}</div><div class="small muted">${week.successes} of ${week.possible} opportunities</div></div><div class="metric-icon" aria-hidden="true">↗</div></section>
+    <section class="card summary"><div><div class="eyebrow">Longest current streak</div><div class="metric">${best} <span>${best===1?'day':'days'}</span></div><div class="small muted">One day at a time</div></div><div class="metric-icon" aria-hidden="true">♨</div></section></div>`;
+  }
+  function weeklyChart(){
+    const days=D.week(selected), first=days[0], last=days.at(-1);
+    const total=D.range(state.habits,state.checkIns,days,today);
+    const w=320,left=32,plot=270,base=154,height=116,slot=plot/days.length;
+    let svg=`<svg class="bar-chart" viewBox="0 0 ${w} 190" role="img" aria-label="Daily completion percentages from ${esc(first)} to ${esc(last)}">`;
+    for(const value of [0,50,100]){const y=base-height*value/100;svg+=`<line x1="${left}" x2="312" y1="${y}" y2="${y}" stroke="var(--border)" stroke-dasharray="3 4"/><text x="23" y="${y+4}" text-anchor="end" fill="var(--muted)" font-size="9">${value}</text>`;}
+    days.forEach((date,i)=>{
+      const d=D.daily(state.habits,state.checkIns,date,today),x=left+slot*i+slot/2, h=height*(d.percent??0)/100;
+      svg+=`<rect x="${x-12}" y="${base-height}" width="24" height="${height}" rx="6" fill="var(--soft)" opacity=".65"/>`;
+      if(d.percent>0)svg+=`<rect x="${x-12}" y="${base-h}" width="24" height="${h}" rx="6" fill="var(--accent)" opacity="${date===selected?'1':'.68'}"/>`;
+      svg+=`<text x="${x}" y="${base+20}" text-anchor="middle" fill="var(--muted)" font-size="10">${D.parse(date).getDate()}</text><text x="${x}" y="22" text-anchor="middle" fill="var(--text)" font-size="9">${date>today?'—':pct(d.percent)}</text>`;
+    });
+    svg+='</svg>';
+    return `<section class="card"><div class="row between"><h2>Your week</h2><span class="mini-legend"><i></i> Completed</span></div><div class="week-score">${pct(total.percent)} <span>overall consistency</span></div>${svg}<div class="chart-note">${fmt(first,{month:'short',day:'numeric'})}–${fmt(last,{day:'numeric'})} · daily completion, 0–100%<br>— means future or no active habits.</div></section>`;
+  }
+  function habitCard(h){
+    const o=state.checkIns[selected]?.[h.id],run=D.streak(h,state.checkIns,today);
+    const success=h.category==='good'?'Completed':'Avoided',missed=h.category==='good'?'Missed':'Occurred';
+    return `<article class="habit ${o==='success'?'is-success':''}"><div class="habit-emoji" aria-hidden="true">${esc(h.emoji)}</div><div class="habit-main"><div class="habit-name">${esc(h.name)}</div><div class="habit-meta"><span>${run?`🔥 ${run}-day streak`:'A fresh chance today'}</span><span class="${o==='success'?'success-text':o==='missed'?'missed-text':''}">${o==='success'?success:o==='missed'?missed:'Not logged'}</span>${h.archivedFrom?`<span>Archives ${esc(h.archivedFrom)}</span>`:''}</div></div><div class="habit-actions"><button class="negative" data-action="negative" data-id="${h.id}" aria-pressed="${o==='missed'}" aria-label="${esc(missed+' '+h.name)}">${missed}</button><button class="check" role="checkbox" aria-checked="${o==='success'}" aria-label="${esc(success+' '+h.name)}" data-action="success" data-id="${h.id}">✓</button><button class="edit" aria-label="${esc('Edit '+h.name)}" data-action="edit" data-id="${h.id}">⋮</button></div></article>`;
+  }
+  function dailyView(){
+    const due=state.habits.filter(h=>D.due(h,selected));
+    const days=D.week(selected);
+    const weekrail=Array.from({length:7},(_,i)=>{
+      const d=days[i];if(!d)return '<div class="day blank"></div>';
+      return `<button class="day ${d===selected?'selected':''} ${d===today?'today':''}" data-action="day" data-date="${d}" ${d>today?'disabled':''} aria-label="${esc(fmt(d,{dateStyle:'full'}))}" aria-pressed="${d===selected}"><span>${fmt(d,{weekday:'short'})}</span><strong>${D.parse(d).getDate()}</strong><i class="daydot"></i></button>`;
+    }).join('');
+    return `<div class="intro"><div><h1>A little better, every day.</h1><p class="muted">Build good habits. Make space for a healthier you.</p></div><button class="btn" data-action="new">＋ Add habit</button></div>${summary()}
+    <div class="workspace"><section><div class="section-head"><div><h2>${selected===today?'Your daily check-in':fmt(selected,{month:'long',day:'numeric'})}</h2><span class="small muted">${fmt(selected,{weekday:'long',month:'long',day:'numeric'})}</span></div><div class="row"><button class="icon-btn" data-action="week-prev" aria-label="Previous week">‹</button><button class="btn secondary small" data-action="today">Today</button><span style="flex:1"></span><button class="icon-btn" data-action="week-next" aria-label="Next week" ${days.at(-1)>=today?'disabled':''}>›</button></div></div><div class="weekrail">${weekrail}</div>
+    ${['good','bad'].map(cat=>`<section class="habit-section"><h3 class="group-title"><span>${cat==='good'?'✦ GOOD HABITS':'◈ BAD HABITS'}</span><span class="pill">${due.filter(h=>h.category===cat).length}</span></h3><div class="habits">${due.filter(h=>h.category===cat).map(habitCard).join('')||'<div class="empty small">No active habits in this group.</div>'}</div></section>`).join('')}
+    <button class="add-dashed" data-action="new">＋ Create a habit that matters to you</button><p class="chart-note">Mark good habits completed and bad habits avoided. Missed and unlogged habits earn no credit. Tap a selected check to undo.</p></section>
+    <aside class="stack">${weeklyChart()}<section class="card quote-card"><div class="quote-mark" aria-hidden="true">“</div><blockquote>You don’t have to be perfect.<br>You just have to keep showing up.</blockquote><p>A SMALL REMINDER FOR YOUR DAY</p></section><section class="card tips"><h3>Your rhythm, your rules</h3><div class="guide-step"><b>1</b><div><strong class="small">Start small</strong><p>A few habits done consistently beat a long wish list.</p></div></div><div class="guide-step"><b>2</b><div><strong class="small">Be honest with yourself</strong><p>A missed day is information. Tomorrow is a new chance.</p></div></div></section></aside></div>`;
+  }
+  function monthChart(){
+    const days=D.month(selected).filter(d=>d<=today),points=days.map((d,i)=>({date:d,...D.range(state.habits,state.checkIns,days.slice(0,i+1),today)})).filter(d=>d.possible>0);
+    if(!points.length)return '<div class="empty"><div class="empty-icon">↗</div>Your story starts with your first active day.</div>';
+    const w=680,left=42,right=22,base=195,top=30,plot=w-left-right,h=base-top;
+    const x=i=>points.length===1?left+plot/2:left+i/(points.length-1)*plot,y=v=>base-v/100*h;
+    let s='<svg class="line-chart" viewBox="0 0 680 232" role="img" aria-label="Running monthly consistency, zero to one hundred percent">';
+    for(const v of [0,25,50,75,100])s+=`<line x1="${left}" x2="658" y1="${y(v)}" y2="${y(v)}" stroke="var(--border)" stroke-dasharray="4 5"/><text x="31" y="${y(v)+4}" text-anchor="end" fill="var(--muted)" font-size="10">${v}%</text>`;
+    if(points.length>1){const line=points.map((d,i)=>`${x(i)},${y(d.percent)}`).join(' ');s+=`<polygon points="${x(0)},${base} ${line} ${x(points.length-1)},${base}" fill="var(--accent)" opacity=".07"/><polyline points="${line}" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>`;}
+    points.forEach((d,i)=>{s+=`<circle cx="${x(i)}" cy="${y(d.percent)}" r="4" fill="var(--accent)"><title>${d.date}: ${pct(d.percent)}</title></circle>`;if(i%5===0||i===points.length-1)s+=`<text x="${x(i)}" y="219" text-anchor="middle" fill="var(--muted)" font-size="11">${D.parse(d.date).getDate()}</text>`;});
+    return s+'</svg><details class="chart-note"><summary>Exact values</summary>'+points.map(d=>`${d.date}: ${pct(d.percent)}`).join(' · ')+'</details>';
+  }
+  function matrix(){
+    const days=D.month(selected),habits=state.habits.filter(h=>days.some(d=>D.due(h,d)&&d<=today));
+    if(!habits.length)return '<div class="empty">No habits were active in this month.</div>';
+    return `<div class="table-scroll"><table class="matrix"><caption class="sr-only">Monthly habit check-ins. Click to toggle success, use the daily view to record a miss.</caption><thead><tr><th scope="col">Habit</th>${days.map(d=>`<th scope="col">${D.parse(d).getDate()}</th>`).join('')}</tr></thead><tbody>${habits.map(h=>`<tr><th scope="row">${esc(h.emoji)} ${esc(h.name)}</th>${days.map(d=>{
+      const active=D.due(h,d)&&d<=today,o=state.checkIns[d]?.[h.id];
+      return `<td>${active?`<button class="${o??''}" data-action="matrix" data-id="${h.id}" data-date="${d}" aria-label="${esc(h.name+' '+d+': '+(o??'not logged'))}" aria-pressed="${o==='success'}">${o==='success'?'✓':o==='missed'?'×':'·'}</button>`:'<span class="muted" aria-label="Not active">—</span>'}</td>`;
+    }).join('')}</tr>`).join('')}<tr><th scope="row">Daily completion</th>${days.map(d=>`<td>${pct(D.daily(state.habits,state.checkIns,d,today).percent)}</td>`).join('')}</tr></tbody></table></div>`;
+  }
+  function insightsView(){
+    const total=D.range(state.habits,state.checkIns,D.month(selected),today);
+    return `<div class="intro"><div><h1>See your momentum.</h1><p class="muted">${fmt(selected,{month:'long',year:'numeric'})} · Small steps add up.</p></div><button class="btn secondary" data-action="export">↓ Export backup</button></div>${summary()}<div class="insights-grid"><section class="card"><div class="row between"><h2>Monthly consistency</h2><strong style="color:var(--accent)">${pct(total.percent)}</strong></div><p class="chart-note">${total.successes} successes / ${total.possible} opportunities · running total, through today</p><div class="chart-scroll">${monthChart()}</div><p class="chart-note">Each point is month-to-date successes divided by month-to-date active habits. Future days are excluded.</p></section>${weeklyChart()}</div><section class="card" style="margin-top:24px"><div class="row between"><div><h2>The big picture</h2><p class="chart-note" style="margin-top:4px">Your monthly tracker, just like your spreadsheet. Click a cell to mark success.</p></div><span class="small muted">✓ Success &nbsp; × Missed</span></div>${matrix()}</section>`;
+  }
+  function settingsView(){
+    const names=['Violet','Teal','Terracotta','Rose'];
+    return `<div class="intro"><div><h1>Your space, your pace.</h1><p class="muted">A habit tracker that feels like you.</p></div></div><div class="setting-grid"><div class="stack"><section class="card"><h2>Appearance</h2><div class="setting-line"><div><h3>Dark mode</h3><p>A softer glow for your evening check-in.</p></div><button class="switch" role="switch" aria-checked="${state.preferences.mode==='dark'}" aria-label="Dark mode" data-action="theme"></button></div><div style="padding-top:20px"><h3>Accent color</h3><p class="small muted" style="margin-top:4px">A little color goes a long way.</p><div class="swatches" role="radiogroup" aria-label="Accent color">${D.accents.map((a,i)=>`<button class="swatch" role="radio" aria-label="${names[i]}" aria-checked="${state.preferences.accent===a}" data-action="accent" data-color="${a}" style="background:${a}">${state.preferences.accent===a?'✓':''}</button>`).join('')}</div></div></section><section class="card"><h2>Your data</h2><p class="chart-note">Check-ins are saved in this browser on this device. They are not sent to GitHub. Export a backup to move between browsers or restore your progress later.</p><div class="backup-actions"><button class="btn" data-action="export">↓ Export backup</button><button class="btn secondary" data-action="import">↑ Restore backup</button></div><p class="chart-note">Opening a local file and visiting your GitHub Pages link use different storage. Export here, then restore there. Clearing browser data removes locally saved progress.</p></section></div><div class="stack"><section class="card"><h2>How your progress works</h2><ul class="text-list"><li>Good habit completed = one success.</li><li>Bad habit explicitly avoided = one success.</li><li>Unlogged or missed = zero successes.</li><li>Week blocks match your sheet: 1–7, 8–14, and so on.</li><li>New habits start today. Archiving starts tomorrow.</li><li>Streaks count consecutive successful calendar days.</li></ul></section><section class="card"><h2>Your habits</h2><p class="chart-note">Edit a habit from Daily. You can personalize its name and emoji. Archive it to preserve your past progress.</p><button class="btn secondary" style="margin-top:16px" data-action="new">＋ Add a habit</button><p class="chart-note">${state.habits.length} habits in your history · no account required</p></section></div></div>`;
+  }
+  function blockedView(){
+    el('app').innerHTML=`<main class="blocked card"><div class="brand"><span class="brand-mark">✓</span>Lock In</div><h1 style="margin-top:24px">Let’s protect your progress.</h1><p class="muted" style="margin-top:16px">${esc(readError)}</p><div class="backup-actions"><button class="btn" data-action="retry-load">Retry loading</button><button class="btn secondary" data-action="import">Restore backup</button></div><p class="chart-note">No saved data has been overwritten.</p></main>`;
+  }
+  function render(){
+    if(readError){blockedView();return;}
+    applyTheme();
+    el('app').innerHTML=`<div class="app"><aside class="sidebar"><div class="brand"><span class="brand-mark">✓</span>Lock In<span style="color:var(--accent)">.</span></div><div class="brand-sub">MAKE ROOM FOR BETTER</div><nav class="nav" aria-label="Main navigation">${[['today','Daily check-in'],['insights','Insights'],['settings','Personalize']].map(([id,name])=>`<button data-action="tab" data-tab="${id}" class="${tab===id?'active':''}" ${tab===id?'aria-current="page"':''}>${icon(id)}${name}</button>`).join('')}</nav><div class="sidebar-note"><div class="plant" aria-hidden="true">🌱</div><strong style="color:var(--text)">Progress over perfection.</strong><p style="margin-top:6px">A small promise to yourself,<br>kept one day at a time.</p></div><div class="sidebar-footer"><span class="dot"></span>${saveError?'Unsaved changes':persisted?'Saved in your browser':'Ready for your first check-in'}</div></aside><main class="main"><header class="topline"><div class="eyebrow">YOUR PERSONAL HABIT SPACE</div><div class="mobile-brand"><span style="color:var(--accent)">✓</span> Lock In.</div><div class="top-actions"><label class="sr-only" for="selected-date">Select check-in date</label><input class="date-input" type="date" id="selected-date" value="${selected}" max="${today}" min="2000-01-01"><button class="icon-btn" data-action="theme" aria-label="${state.preferences.mode==='dark'?'Switch to light mode':'Switch to dark mode'}">${state.preferences.mode==='dark'?'☀':'☾'}</button><div class="avatar" aria-hidden="true">✦</div></div></header>${saveError?`<div class="banner error" role="alert"><span>${esc(saveError)}</span><button class="btn secondary small" data-action="export">Export</button><button class="icon-btn" aria-label="Retry saving" data-action="retry-save">↻</button></div>`:''}${tab==='today'?dailyView():tab==='insights'?insightsView():settingsView()}<footer class="footer"><span>Made for your everyday, not your perfect day.</span><span>Local to this browser · <button class="negative" data-action="export">Back up your progress</button></span></footer></main></div>`;
+  }
+  function openEditor(id){
+    editing=id?state.habits.find(h=>h.id===id):null;
+    el('editor-title').textContent=editing?'Make it yours':'A new little promise';
+    el('habit-name').value=editing?.name??'';el('habit-emoji').value=editing?.emoji??'✨';
+    el('habit-category').value=editing?.category??'good';el('habit-category').disabled=Boolean(editing);
+    el('category-note').textContent=editing?'Category stays fixed to preserve your history.':'Good habits are things to do. Bad habits are things to avoid.';
+    el('archive-area').classList.toggle('hidden',!editing||Boolean(editing.archivedFrom));
+    el('archive-confirm').classList.add('hidden');el('archive-button').classList.remove('hidden');
+    el('editor').showModal();el('habit-name').focus();
+  }
+  function downloadBackup(){
+    let data=state;
+    if(!data){toast('Restore a valid backup to continue.');return;}
+    const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+    const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`lockin-backup-${D.key()}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    toast('Backup exported. Keep it somewhere safe.');
+  }
+  document.addEventListener('click',event=>{
+    const target=event.target.closest('[data-action]');if(!target||target.disabled)return;
+    const {action,id,date}=target.dataset;
+    if(action==='import'){el('import-file').value='';el('import-file').click();return;}
+    if(action==='retry-load'){location.reload();return;}
+    if(readError)return;
+    const current=state.checkIns[selected]?.[id];
+    if(action==='tab'){tab=target.dataset.tab;render();}
+    else if(action==='day'){selected=date;render();}
+    else if(action==='today'){selected=today;render();}
+    else if(action==='week-prev'){selected=D.add(D.week(selected)[0],-1);render();}
+    else if(action==='week-next'){selected=D.add(D.week(selected).at(-1),1);if(selected>today)selected=today;render();}
+    else if(action==='new')openEditor();
+    else if(action==='edit')openEditor(id);
+    else if(action==='success')outcome(id,selected,current==='success'?undefined:'success');
+    else if(action==='negative')outcome(id,selected,current==='missed'?undefined:'missed');
+    else if(action==='matrix')outcome(id,date,state.checkIns[date]?.[id]==='success'?undefined:'success');
+    else if(action==='theme'){state.preferences.mode=state.preferences.mode==='light'?'dark':'light';save();render();}
+    else if(action==='accent'){state.preferences.accent=target.dataset.color;save();render();}
+    else if(action==='export')downloadBackup();
+    else if(action==='retry-save'){save();render();}
+  });
+  document.addEventListener('change',event=>{
+    if(event.target.id==='selected-date'){
+      const value=event.target.value;if(D.validDate(value)&&value<=today){selected=value;render();}
+    }
+  });
+  el('habit-form').addEventListener('submit',event=>{
+    event.preventDefault();const name=el('habit-name').value.trim(),emoji=el('habit-emoji').value.trim();
+    if(!name||name.length>60||!emoji||emoji.length>32)return;
+    if(editing){editing.name=name;editing.emoji=emoji;}
+    else{
+      state.habits.push({id:`habit-${Date.now()}-${Math.random().toString(36).slice(2,9)}`,name,emoji,category:el('habit-category').value,startDate:today});
+      selected=today;
+    }
+    save();el('editor').close();render();toast(editing?'Habit updated.':'A fresh start. Your new habit begins today.');
+  });
+  el('editor-close').addEventListener('click',()=>el('editor').close());
+  el('editor-cancel').addEventListener('click',()=>el('editor').close());
+  document.querySelectorAll('[data-emoji]').forEach(b=>b.addEventListener('click',()=>{el('habit-emoji').value=b.dataset.emoji;}));
+  el('archive-button').addEventListener('click',()=>{el('archive-confirm').classList.remove('hidden');el('archive-button').classList.add('hidden');});
+  el('confirm-archive').addEventListener('click',()=>{
+    if(!editing)return;editing.archivedFrom=D.add(today,1);save();el('editor').close();render();toast('Archived from tomorrow. Your history stays intact.');
+  });
+  el('import-file').addEventListener('change',async event=>{
+    const file=event.target.files[0];if(!file)return;
+    if(file.size>10*1024*1024){toast('Please choose a backup smaller than 10 MB.');return;}
+    try{
+      importCandidate=D.validate(JSON.parse(await file.text()));
+      el('import-description').textContent=`This backup has ${importCandidate.habits.length} habits and ${Object.keys(importCandidate.checkIns).length} days of check-ins. It will replace the data currently saved in this browser. Export your current backup first if you want to keep it.`;
+      el('restore').showModal();
+    }catch(error){toast(error.message||'This backup could not be read.');}
+  });
+  el('restore-cancel').addEventListener('click',()=>{el('restore').close();importCandidate=null;});
+  el('restore-confirm').addEventListener('click',()=>{
+    if(!importCandidate)return;
+    state=importCandidate;importCandidate=null;readError='';selected=today;save();el('restore').close();render();toast('Your backup is restored. Welcome back.');
+  });
+  function refreshDate(){const next=D.key();if(next!==today){if(selected===today||selected>next)selected=next;today=next;render();}}
+  setInterval(refreshDate,30000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshDate();});
+  window.addEventListener('storage',event=>{
+    if(event.key!==STORAGE)return;
+    try{
+      if(event.newValue){state=D.validate(JSON.parse(event.newValue));readError='';saveError='';persisted=true;render();toast('Updated from your other tab.');}
+      else toast('Saved data was removed in another tab. Export a backup to keep this copy.');
+    }catch{toast('Could not load a change from another tab. Your current view is kept.');}
+  });
+  render();
+  if(!readError&&!persisted){save();render();}
+})();
+</script>
+</body>
+</html>
